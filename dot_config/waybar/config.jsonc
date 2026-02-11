@@ -1,0 +1,44 @@
+{
+	"modules-left":[
+		"hyprland/workspaces"
+	],
+	"modules-right":[
+		"network",
+		"battery",
+		"clock"
+	],
+	"hyprland/workspaces": {
+		"format": "{windows}",
+		"format-window-separator": "",
+		"workspace-taskbar": {
+			"enable": true,
+			"update-active-window": true,
+			"format": "{icon}",// {title:.22}",
+			"icon-size": 18,
+			"on-click-window": "${SCRIPTS}/focus-window.sh {address} {button}"
+		}
+	},
+	"network": {
+		"format-wifi": "{essid:.5}.. ",
+		"format-ethernet": "LAN {ipaddr}",
+		"format-alt": "{ifname} {ipaddr}/{cidr}",
+		"tooltip-format": "{ipaddr}"
+	},
+	"battery": {
+		"states": {
+			"warning": 30,
+			"critical": 15
+		},
+		"interval": 60,
+		"format": "{capacity}% {icon}",
+		"format-plugged": "{capacity}% ",
+		"format-alt": "{time} {icon}",
+		"format-icons": ["", "", "", "", ""],
+		"max-length": 25
+	},
+	"clock": {
+		"format": "{:%OI:%M %p}",
+		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+		"format-alt": "{:%a %Y-%m-%d}"
+	}
+}
